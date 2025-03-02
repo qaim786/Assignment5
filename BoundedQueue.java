@@ -3,6 +3,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Collection;
 
+// done by qaim
 public class BoundedQueue<E> {
 
     protected List<E> list;
