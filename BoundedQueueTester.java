@@ -10,42 +10,64 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ArrayList;
 
+// done by Qaim
 public class BoundedQueueTester {
 
 	// Happy Path
-    @Test
+ @Test
     public void testEmptyQueue() {
-    
-		
-	}
+        BoundedQueue<String> queue = new BoundedQueue<>(5);
+        assertTrue(queue.isEmpty());
+        assertFalse(queue.isFull());
+        assertEquals(0, queue.getCount());
+        assertTrue(queue.repOk());
+    }
 
 	// Happy Path
-    @Test
+ @Test
     public void testFullQueue() {
-    
-	
-	}
+        BoundedQueue<Integer> queue = new BoundedQueue<>(3);
+        queue.put(1);
+        queue.put(2);
+        queue.put(3);
+        assertTrue(queue.isFull());
+        assertFalse(queue.isEmpty());
+        assertEquals(3, queue.getCount());
+        assertTrue(queue.repOk());
+    }
 
 	// Happy Path (put at least one null)
-    @Test
+ @Test
     public void testPut() {
-    
-	
-	}
+        BoundedQueue<String> queue = new BoundedQueue<>(3);
+        queue.put("CS");
+        queue.put(null); 
+        queue.put("419");
+        assertEquals(2, queue.getCount()); 
+        assertTrue(queue.repOk());
+    }
 
 	// Passes when exception is thrown
-    @Test 
+ @Test
     public void testPutException() {
-    
-	}
+        BoundedQueue<Integer> queue = new BoundedQueue<>(3);
+        queue.put(1);
+        queue.put(2);
+        queue.put(3);
+	queue.put(4);
+    }
 
 	
 	// Happy Path
-    @Test
-    public void testGet() {
-        
-		
-	}
+@Test
+   public void testGet() {
+        BoundedQueue<String> queue = new BoundedQueue<>(3);
+        queue.put("CS");
+        queue.put("419");
+        assertEquals("CS", queue.get());
+        assertEquals(1, queue.getCount());
+        assertTrue(queue.repOk());
+    }
 
 	// Passes when exception is thrown
     @Test 
