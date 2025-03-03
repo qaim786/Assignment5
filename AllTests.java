@@ -4,7 +4,8 @@ import junit.framework.JUnit4TestAdapter;
 
 // This section declares all of the test classes in the program.
 @RunWith (Suite.class)
-@Suite.SuiteClasses ({BoundedQueueTester.class}	)  // Add test classes here.
+@Suite.SuiteClasses ({BoundedQueueTester.class, BoundedQueueBuggy1Tester.class, BoundedQueueBuggy2Tester.class}	)  // Add test classes here.
+
 //@Suite.SuiteClasses ({BoundedQueueTester.class, BoundedQueueBuggy1Tester.class, BoundedQueueBuggy2Tester.class}	)  // Add test classes here.
 
 

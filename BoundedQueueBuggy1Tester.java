@@ -1,4 +1,5 @@
 import org.junit.*;
+import org.junit.runner.JUnitCore;
 import org.junit.runner.RunWith;
 import static org.junit.Assert.*;
 import static org.junit.Assume.*;
