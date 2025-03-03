@@ -15,18 +15,13 @@ public class BoundedQueueBuggy1Tester {
 	// Buggy1
     @Test 
     public void testBuggy1() {
-        
+		BoundedQueueBuggy1<Integer> queue = new BoundedQueueBuggy1<>(3);
+		queue.put(1);
+        queue.put(null); 
+        queue.put(2);
+        assertEquals(3, queue.getCount()); 
+        assertTrue(queue.repOk());
 		
-		
-		
-		
-		
-		
-		
-		
-		
-
-		//assertTrue(someQueue.repOk());
 	}
 
 }
