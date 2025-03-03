@@ -4,6 +4,7 @@ import java.util.Iterator;
 import java.util.List;
 /*
  * The bug is adding null using put() method to the list.
+ * By Smita
  */
 public class BoundedQueueBuggy1<E> {
     protected List<E> list;
